@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <style>
+      .jumbotron {
+          opacity: 0.5;
+      }
+      img.bg {
+            min-height: 100%;
+            min-width: 1024px;
+            width: 100%;
+            height: auto;
+            position: fixed;
+            top: 0;
+            left: 0;
+            opacity: 0.7;
+        }
+        .or_border {
+            border-top-style: solid;
+            border-bottom-style: double;
+            border-top-color: #555555;
+            border-bottom-color: #555555;
+        }
+        .hr-primary {
+        background-image: -webkit-linear-gradient(left, rgba(66,133,244,.8), rgba(210,105,30,.8), rgba(0,0,0,0));
+        }
+      </style>
+
+<script>
+    let lst = ['afghanistan', 'alaaland islands', 'albania', 'algeria', 'american samoa', 'andorra', 
+        'angola', 'anguilla', 'antarctica', 'antigua and barbuda', 'argentina', 'armenia', 'aruba', 
+        'australia', 'austria', 'azerbaijan', 'bahamas', 'bahrain', 'bangladesh', 'barbados', 'belarus',
+        'belgium', 'belize', 'benin', 'bermuda', 'bhutan', 'bolivia', 'bosnia', 'botswana', 'bouvet island',
+        'brazil', 'british indian ocean territory', 'british virgin islands', 'brunei darussalam',
+        'bulgaria', 'burkina faso', 'burundi', 'cambodia', 'cameroon', 'canada', 'cape verde',
+        'cayman islands', 'central african republic', 'chad', 'chile', 'china', 'christmas island',
+        'cocos islands', 'colombia', 'comoros', 'congo', 'cook islands', 'costa rica', 'croatia',
+        'cuba', 'cyprus', 'czech republic', 'denmark', 'djibouti', 'dominica', 'dominican republic',
+        'ecuador', 'egypt', 'equatorial guinea', 'eritrea', 'estonia', 'ethiopia', 'falkland islands',
+        'faroe islands', 'fiji', 'finland', 'france', 'gabon', 'gambia', 'georgia', 'germany',
+        'ghana', 'gibraltar', 'greece', 'greenland', 'grenada', 'guadeloupe', 'guam', 'guatemala',
+        'guernsey', 'guiana', 'guinea', 'guinea-bissau', 'guyana', 'haiti',
+        'heard and mcdonald islands', 'herzegovina', 'honduras', 'hong kong', 'hungary',
+        'iceland', 'india', 'indonesia', 'iran', 'iraq', 'ireland', 'isle of man', 'israel',
+        'italy', 'jamaica', 'japan', 'jersey', 'jordan', 'kazakhstan', 'kenya', 'kiribati',
+        'kuwait', 'kyrgyzstan', 'lao pdr', 'latvia', 'lebanon', 'lesotho', 'liberia', 'libya',
+        'liechtenstein', 'lithuania', 'luxembourg', 'macao', 'macedonia', 'madagascar',
+        'malawi', 'malaysia', 'maldives', 'mali', 'malta', 'malvinas', 'marshall islands',
+        'martinique', 'mauritania', 'mauritius', 'mayotte', 'mexico', 'micronesia',
+        'moldova', 'monaco', 'mongolia', 'montenegro', 'montserrat', 'morocco',
+        'mozambique', 'myanmar', 'namibia', 'nauru', 'nepal', 'netherlands',
+        'new caledonia', 'new zealand', 'nicaragua', 'niger', 'nigeria',
+        'niue', 'norfolk island', 'north korea', 'northern mariana islands', 'norway',
+        'oman', 'outlying islands', 'pakistan', 'palau', 'palestinian territory', 'panama',
+        'papua new guinea', 'paraguay', 'peru', 'philippines', 'pitcairn', 'poland', 'polynesia',
+        'portugal', 'puerto rico', 'qatar', 'romania', 'russian federation', 'rwanda',
+        'saint helena', 'saint lucia', 'samoa', 'san marino', 'saudi arabia', 'senegal', 
+        'serbia', 'seychelles', 'sierra leone', 'singapore', 'slovakia', 'slovenia', 
+        'solomon islands', 'somalia', 'south africa', 'south georgia', 'south korea', 
+        'south sudan', 'spain', 'sri lanka', 'sudan', 'suriname', 'swaziland', 'sweden', 
+        'switzerland', 'syria', 'taiwan', 'tajikistan', 'tanzania', 'thailand', 'timor-leste', 
+        'togo', 'tokelau', 'tonga', 'trinidad and tobago', 'tunisia', 'turkey', 'turkmenistan', 
+        'tuvalu', 'uganda', 'ukraine', 'united arab emirates', 'united kingdom', 
+        'united states of america', 'uruguay', 'uzbekistan', 'vanuatu', 'vatican city', 
+        'venezuela', 'vietnam', 'virgin islands, us', 'wallis and futuna islands', 
+        'western sahara', 'yemen', 'zambia', 'zimbabwe']
+    </script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Weather-API</title>
+    <script src="link_code.js"></script>
+  </head>
+  <body>
+        <img src="Image_bg.jpg" alt="bckgound" class="bg" />
+    <div class="container bg-dark">
+        <div class="row mb-2" >
+            <div class="col-md-12">
+                    <h1 style="text-align: center" class="text-white">Weather API</h1>
+            </div>
+        </div>
+        <div class="row mb-2">
+        <div class="col-md-6">
+            <!-- Adding the border  -->
+          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 style="text-align: center" class="text-white">Input Location Data By</h1>
+                </div>
+            </div>
+
+              <form class="form-group">
+                    <div class="form-group">
+
+                        <div class="row mb-2">
+                            <div class="col-md-6">
+                                <h3 class="text-white"> CITY NAME </h3>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" id= "btn-1" class="btn btn-primary btn-block" onclick="send_data('city');">Submit</button>
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="city" placeholder="City name like Kolkata">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-group mb-3">
+                                    <select class="custom-select" id="city_country">
+                                    <option selected>India</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-md-12">
+                                <hr class="hr-primary" style="height: 10px;" />
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-md-6">
+                                <h3 class="text-white"> PINCODE </h3>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-primary btn-block" onclick="send_data('pincode');">Submit</button>
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-md-6">
+                                    <input type="text" class="form-control" id="pincode" placeholder="Pin code like 700115">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-group mb-3">
+                                    <select class="custom-select" id="pincode_country">
+                                    <option selected>India</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-md-12">
+                                <hr class="hr-primary" style="height: 10px;" />
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-md-6">
+                                <h3 class="text-white"> COORDINATES </h3>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-primary btn-block" onclick="send_data('coordinates');">Submit</button>
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-md-6">
+                                    <input type="text" class="form-control" id="latitude" placeholder="latitude like 88.88">
+                            </div>
+                            <div class="col-md-6">
+                                    <input type="text" class="form-control" id="longitude" placeholder="Longitude like 22.22">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1 style="text-align: center" class="text-white">Weather Report</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <pre class="text-white" id="result"></pre>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<script>
+    var x = document.getElementById("city_country");
+    var y = document.getElementById("pincode_country");
+    for (let val in lst){
+        let option = document.createElement("option");
+        option.text = lst[val];
+        x.add(option);
+    }
+    for (let val in lst){
+        let option = document.createElement("option");
+        option.text = lst[val];
+        y.add(option);
+    }
+</script>
+  </body>
+</html>
